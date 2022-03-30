@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-constructor */
 import React from 'react';
 
 import { Nullable } from '../../typings/Types';
@@ -16,6 +15,7 @@ interface PathInfo<T> {
 }
 
 export class ValidationBuilder<TRoot, T> {
+  // eslint-disable-next-line no-useless-constructor
   constructor(
     private readonly writer: ValidationWriter<TRoot>,
     private readonly tokens: PathTokensCache,

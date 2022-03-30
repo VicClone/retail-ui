@@ -64,9 +64,11 @@ const getButtonCorners = (
   };
 };
 
-const passCornersIfButton = (child: React.ReactNode, corners: React.CSSProperties) => {
+const passCornersIfButton = (child: React.ReactNode, firstChild: React.ReactNode, lastChild: React.ReactNode) => {
   if (isButton(child)) {
-    return React.cloneElement(child, { corners: corners });
+    const corners = getButtonCorners(child, firstChild, lastChild);
+
+    return React.cloneElement(child, { corners });
   }
 
   return child;
@@ -103,8 +105,7 @@ export class Group extends React.Component<GroupProps> {
               [styles.itemFirst()]: child === firstChild,
             });
 
-            const buttonCorners = getButtonCorners(child, firstChild, lastChild);
-            const modifiedChild = passCornersIfButton(child, buttonCorners);
+            const modifiedChild = passCornersIfButton(child, firstChild, lastChild);
 
             return (
               <div

@@ -274,6 +274,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
       }),
       style: {
         textAlign: align,
+        ...corners,
       },
       disabled: disabled || loading,
       onClick: onClick,
@@ -373,7 +374,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     return (
       <CommonWrapper rootNodeRef={this.setRootNode} {...this.props}>
         <span {...wrapProps}>
-          <button ref={this._ref} {...rootProps} style={{ ...rootProps.style, ...corners }}>
+          <button ref={this._ref} {...rootProps} style={{ ...rootProps.style }}>
             {innerShadowNode}
             {outlineNode}
             {loadingNode}

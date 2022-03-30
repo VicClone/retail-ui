@@ -1,4 +1,3 @@
-/* eslint-disable no-multi-assign */
 import { mount, ReactWrapper } from 'enzyme';
 import React from 'react';
 
@@ -281,9 +280,10 @@ describe('Tooltip', () => {
       </Tooltip>,
     );
     const instance = wrapper.instance();
-    // @ts-ignore: private property
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const timer = (instance.hoverTimeout = setTimeout(() => {}));
+    const timer = setTimeout(() => {});
+    // @ts-ignore: private property
+    instance.hoverTimeout = timer;
 
     wrapper.unmount();
 

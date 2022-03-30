@@ -1,4 +1,3 @@
-/* eslint-disable no-multi-assign */
 import React, { KeyboardEvent } from 'react';
 import PropTypes from 'prop-types';
 
@@ -429,7 +428,8 @@ export class Autocomplete extends React.Component<AutocompleteProps, Autocomplet
     }
 
     let promise;
-    const expectingId = (this.requestId += 1);
+    this.requestId += 1;
+    const expectingId = this.requestId;
     if (typeof source === 'function') {
       promise = source(pattern);
     } else {

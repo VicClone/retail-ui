@@ -2,6 +2,7 @@ import { DefaultThemeInternal } from '../../internal/themes/DefaultTheme';
 import { isNonNullable } from '../utils';
 
 import { Theme, ThemeIn } from './Theme';
+import { findPropertyDescriptor } from './ThemeHelpers';
 
 export class ThemeFactory {
   public static create<T extends {}>(theme: ThemeIn & T, baseTheme?: Theme): Readonly<Theme & T> {
@@ -9,9 +10,9 @@ export class ThemeFactory {
     return this.constructTheme(base, theme);
   }
 
-  public static overrideDefaultTheme(theme: ThemeIn) {
-    Object.keys(theme).forEach((variableName) => {
-      const descriptor = Object.getOwnPropertyDescriptor(theme, variableName)!;
+  public static overrideDefaultTheme(theme: Theme) {
+    ThemeFactory.getKeys(DefaultThemeInternal).forEach((variableName) => {
+      const descriptor = findPropertyDescriptor(theme, variableName);
       Object.defineProperty(DefaultThemeInternal, variableName, descriptor);
     });
   }

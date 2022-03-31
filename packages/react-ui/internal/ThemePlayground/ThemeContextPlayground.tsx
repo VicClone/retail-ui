@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 
-import { isNonNullable } from '../../lib/utils';
 import { ThemeContext } from '../../lib/theming/ThemeContext';
 import { Theme, ThemeIn } from '../../lib/theming/Theme';
 import { ThemeFactory } from '../../lib/theming/ThemeFactory';
@@ -14,6 +13,7 @@ import { ComboBox } from '../../components/ComboBox';
 import { Link } from '../../components/Link';
 import * as ColorFunctions from '../../lib/styles/ColorFunctions';
 import { Writeable } from '../../typings/utility-types';
+import { findPropertyDescriptor } from '../../lib/theming/ThemeHelpers';
 
 import { ThemeEditor } from './ThemeEditor';
 import { styles } from './Playground.styles';
@@ -214,17 +214,4 @@ export class ThemeContextPlayground extends React.Component<PlaygroundProps, Pla
 
     return ThemeFactory.create<ThemeIn>(result);
   };
-}
-
-function findPropertyDescriptor(theme: Theme, propName: keyof Theme) {
-  // TODO: Rewrite for loop.
-  // TODO: Enable `no-param-reassign` rule.
-  // eslint-disable-next-line no-param-reassign
-  for (; isNonNullable(theme); theme = Object.getPrototypeOf(theme)) {
-    if (Object.prototype.hasOwnProperty.call(theme, propName)) {
-      return Object.getOwnPropertyDescriptor(theme, propName) || {};
-    }
-  }
-
-  return {};
 }

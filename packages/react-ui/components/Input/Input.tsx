@@ -310,9 +310,9 @@ export class Input extends React.Component<InputProps, InputState> {
         [styles.errorFallback(this.theme)]: error && (isIE11 || isEdge),
       }),
       style: { width },
-      onMouseEnter: onMouseEnter,
-      onMouseLeave: onMouseLeave,
-      onMouseOver: onMouseOver,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseOver,
     };
 
     const inputProps = {
@@ -321,7 +321,7 @@ export class Input extends React.Component<InputProps, InputState> {
         [styles.inputFocus(this.theme)]: focused,
         [styles.inputDisabled(this.theme)]: disabled,
       }),
-      value: value,
+      value,
       onChange: this.handleChange,
       onFocus: this.handleFocus,
       onKeyDown: this.handleKeyDown,
@@ -331,7 +331,7 @@ export class Input extends React.Component<InputProps, InputState> {
       ref: this.refInput,
       type: 'text',
       placeholder: !this.isMaskVisible && !polyfillPlaceholder ? placeholder : undefined,
-      disabled: disabled,
+      disabled,
     };
 
     if (type === 'password') {

@@ -73,5 +73,5 @@ export const useDrop = <TElement extends IElementWithListener>(props: IUseDropPr
     };
   }, [handleDrop, handleDragOver, preventDefault]);
 
-  return { isDraggable: isDraggable, ref: droppableRef };
+  return { isDraggable, ref: droppableRef };
 };

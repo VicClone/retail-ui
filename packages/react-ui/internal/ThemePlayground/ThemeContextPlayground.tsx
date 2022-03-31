@@ -177,7 +177,7 @@ export class ThemeContextPlayground extends React.Component<PlaygroundProps, Pla
 
     const nextThemeErrors: ThemesErrors = { ...themesErrors };
     nextThemeErrors[editingThemeType][variable] = !canSetVariable;
-    const stateUpdate = { themes: themes, currentTheme: currentTheme, themesErrors: nextThemeErrors };
+    const stateUpdate = { themes, currentTheme, themesErrors: nextThemeErrors };
 
     if (canSetVariable) {
       const result = this.changeThemeVariable(theme, variable, value);

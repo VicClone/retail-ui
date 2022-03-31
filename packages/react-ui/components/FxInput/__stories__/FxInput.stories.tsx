@@ -103,7 +103,7 @@ class TestFxInput extends React.Component<TestFxInputProps, TestFxInputState> {
   }
 
   private handleChange = (value: React.ReactText) => {
-    this.setState({ value: value, auto: false });
+    this.setState({ value, auto: false });
   };
 
   private handleRestore = () => {
@@ -122,7 +122,7 @@ class TestWrapper extends React.Component<{
     const { width, ruler, children } = this.props;
     const style: React.CSSProperties = {
       position: 'relative',
-      width: width,
+      width,
       padding: 10,
       paddingTop: (ruler && 30) || 10,
       marginBottom: 15,

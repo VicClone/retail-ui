@@ -110,7 +110,7 @@ describe('DateInput as InputlikeText', () => {
       const expectedDateStr = `"${expected}"`.padEnd(12, ' ');
       it(`calls onValueChange with ${expectedDateStr} if value is "${initDate}" and pressed "${keyString}"`, () => {
         const onValueChange = jest.fn();
-        const input = getInput(render({ value: initDate, onValueChange: onValueChange }));
+        const input = getInput(render({ value: initDate, onValueChange }));
         input.simulate('focus');
         keys.forEach((key) => input.simulate('keydown', { key }));
         const [value] = onValueChange.mock.calls[onValueChange.mock.calls.length - 1];
@@ -193,7 +193,7 @@ describe('DateInput as InputlikeText', () => {
       it(`${expectedDateStr} if value is "${initDate}", minDate is "${minDate}", maxDate is "${maxDate}" and pressed "${keyString}"`, () => {
         const onValueChange = jest.fn();
         const input = getInput(
-          render({ value: initDate, onValueChange: onValueChange, minDate: minDate, maxDate: maxDate }),
+          render({ value: initDate, onValueChange, minDate, maxDate }),
         );
         input.simulate('focus');
         keys.forEach((key) => input.simulate('keydown', { key }));

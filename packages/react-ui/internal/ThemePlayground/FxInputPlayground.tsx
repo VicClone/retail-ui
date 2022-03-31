@@ -26,7 +26,7 @@ export class FxInputPlayground extends React.Component<{}, { value: string; auto
   }
 
   private onValueChange = (value: string) => {
-    this.setState({ value: value, auto: false });
+    this.setState({ value, auto: false });
   };
 
   private handleRestore = () => {

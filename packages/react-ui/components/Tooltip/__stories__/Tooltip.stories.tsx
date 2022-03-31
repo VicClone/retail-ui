@@ -1195,7 +1195,7 @@ TooltipWithAnchor.parameters = {
   creevey: {
     skip: [{ in: ['ie11', 'ie11Dark', 'ie11Flat', 'ie118px', 'ie11Flat8px'] }],
     tests: {
-      async ['hover by dynamic anchor']() {
+      async 'hover by dynamic anchor'() {
         await this.browser
           .actions({
             bridge: true,

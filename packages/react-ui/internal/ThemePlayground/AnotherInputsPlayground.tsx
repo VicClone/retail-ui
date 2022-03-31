@@ -47,7 +47,7 @@ export class DatePickerPlayground extends React.Component<any, any> {
     this.setState(() => {
       const error = !!currentValue && !DatePicker.validate(currentValue);
       return {
-        error: error,
+        error,
         tooltip: error,
       };
     });

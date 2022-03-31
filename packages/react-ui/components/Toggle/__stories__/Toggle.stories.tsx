@@ -114,7 +114,7 @@ class Playground extends Component<any, any> {
 
   private toggle(checked: boolean) {
     this.setState({
-      checked: checked,
+      checked,
       loading: this.state.loadingActive,
     });
   }

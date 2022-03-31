@@ -34,7 +34,7 @@ export const calculateScrollPosition = (
   return {
     scrollPosition: nextScrollPosition,
     months: nextMonths,
-    scrollDirection: scrollDirection,
+    scrollDirection,
   };
 };
 
@@ -49,11 +49,11 @@ export const applyDelta =
       maxDate && scrollDirection > 0 && maxDate.year * 12 + maxDate.month < months[1].year * 12 + months[1].month;
 
     if (isMinDateExceeded) {
-      return { scrollPosition: 0, scrollDirection: scrollDirection };
+      return { scrollPosition: 0, scrollDirection };
     }
 
     if (isMaxDateExceeded) {
-      return { scrollPosition: months[2].getHeight(theme), scrollDirection: scrollDirection };
+      return { scrollPosition: months[2].getHeight(theme), scrollDirection };
     }
 
     return calculateScrollPosition(months, scrollPosition, deltaY, theme);

@@ -101,7 +101,7 @@ export class Gapped extends React.Component<GappedProps> {
     const gap = this.getGapValue();
     const itemStyle: React.CSSProperties = {
       display: 'inline-block',
-      verticalAlign: verticalAlign,
+      verticalAlign,
       ...(wrap ? { marginLeft: gap, marginTop: gap } : {}),
     };
     const rootStyle: React.CSSProperties = wrap ? { paddingTop: 1 } : {};

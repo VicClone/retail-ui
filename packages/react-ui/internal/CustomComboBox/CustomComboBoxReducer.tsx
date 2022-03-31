@@ -116,7 +116,7 @@ export const Effect: EffectFactory = {
     if (onUnexpectedInput) {
       const value = onUnexpectedInput(textValue);
       if (value !== undefined) {
-        dispatch({ type: 'ValueChange', value: value, keepFocus: false });
+        dispatch({ type: 'ValueChange', value, keepFocus: false });
       }
     }
   },
@@ -222,7 +222,7 @@ export function reducer<T>(
             inputChanged: false,
             editing: true,
             items: null,
-            textValue: textValue,
+            textValue,
           },
           [Effect.valueChange(value), Effect.cancelRequest, Effect.inputFocus],
         ];
@@ -233,7 +233,7 @@ export function reducer<T>(
           inputChanged: false,
           editing: false,
           items: null,
-          textValue: textValue,
+          textValue,
         },
         [Effect.valueChange(value), Effect.cancelRequest],
       ];

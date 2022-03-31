@@ -213,7 +213,7 @@ export class PopupPin extends React.Component<Props> {
           innerTop: -outerSize,
           innerLeft: -outerSize + bordersDelta,
           activeBorder: 'Top',
-          outerSize: outerSize,
+          outerSize,
         };
       case 'bottom':
         return {
@@ -222,7 +222,7 @@ export class PopupPin extends React.Component<Props> {
           innerTop: -outerSize + 2 * bordersDelta,
           innerLeft: -outerSize + bordersDelta,
           activeBorder: 'Bottom',
-          outerSize: outerSize,
+          outerSize,
         };
       case 'left':
         return {
@@ -231,7 +231,7 @@ export class PopupPin extends React.Component<Props> {
           innerTop: -outerSize + bordersDelta,
           innerLeft: -outerSize,
           activeBorder: 'Left',
-          outerSize: outerSize,
+          outerSize,
         };
       case 'right':
         return {
@@ -240,7 +240,7 @@ export class PopupPin extends React.Component<Props> {
           innerTop: -outerSize + bordersDelta,
           innerLeft: -outerSize + 2 * bordersDelta,
           activeBorder: 'Right',
-          outerSize: outerSize,
+          outerSize,
         };
       default:
         throw new Error('Direction must be one of top, right, bottom, left');

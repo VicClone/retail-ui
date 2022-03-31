@@ -157,7 +157,7 @@ describe('<TokenInput />', () => {
     wrapper
       .find('textarea')
       .simulate('focus')
-      .simulate('change', { target: { value: value } });
+      .simulate('change', { target: { value } });
 
     await delay(0);
     wrapper.update();

@@ -12,7 +12,7 @@ export interface SvgIconProps extends React.HTMLAttributes<HTMLSpanElement> {
 
 const SvgIcon = React.forwardRef<HTMLElement, SvgIconProps>(({ color, size, style, children, ...rest }, ref) => {
   return (
-    <span ref={ref} className={styles.root()} style={{ ...style, fontSize: size, color: color }} {...rest}>
+    <span ref={ref} className={styles.root()} style={{ ...style, fontSize: size, color }} {...rest}>
       {React.cloneElement(children as JSX.Element, {
         className: styles.icon(),
         fill: 'currentColor',

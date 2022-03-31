@@ -46,12 +46,12 @@ export class BGRuler extends React.Component<{
     const { width, height, color, top, bottom, left, right } = this.props;
     const wrapper: React.CSSProperties = {
       position: 'absolute',
-      width: width,
-      height: height,
-      top: top,
-      bottom: bottom,
-      left: left,
-      right: right,
+      width,
+      height,
+      top,
+      bottom,
+      left,
+      right,
       overflow: 'hidden',
     };
     const iframe: React.CSSProperties = {
@@ -102,7 +102,7 @@ export class BGRuler extends React.Component<{
           fontFamily: 'Arial',
           fontSize: 10,
           lineHeight: 1,
-          color: color,
+          color,
           bottom: -1,
           left: index * 100 + 5,
         };

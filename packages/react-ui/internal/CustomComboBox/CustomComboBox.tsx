@@ -179,7 +179,7 @@ export class CustomComboBox<T> extends React.PureComponent<CustomComboBoxProps<T
       if (expectingId === this.requestId) {
         this.dispatch({
           type: 'ReceiveItems',
-          items: items,
+          items,
         });
       }
     } catch (error) {
@@ -261,12 +261,12 @@ export class CustomComboBox<T> extends React.PureComponent<CustomComboBoxProps<T
       onFocus: this.handleFocus,
       onFocusOutside: this.handleBlur,
       onInputBlur: this.handleInputBlur,
-      onInputValueChange: (value: string) => this.dispatch({ type: 'TextChange', value: value }),
+      onInputValueChange: (value: string) => this.dispatch({ type: 'TextChange', value }),
       onInputFocus: this.handleFocus,
       onInputClick: this.handleInputClick,
       onInputKeyDown: (event: React.KeyboardEvent) => {
         event.persist();
-        this.dispatch({ type: 'KeyPress', event: event });
+        this.dispatch({ type: 'KeyPress', event });
       },
       onMouseEnter: this.props.onMouseEnter,
       onMouseOver: this.props.onMouseOver,
@@ -308,7 +308,7 @@ export class CustomComboBox<T> extends React.PureComponent<CustomComboBoxProps<T
     if (prevState.editing && !this.state.editing) {
       this.handleBlur();
     }
-    this.dispatch({ type: 'DidUpdate', prevProps: prevProps, prevState: prevState });
+    this.dispatch({ type: 'DidUpdate', prevProps, prevState });
   }
 
   /**
@@ -347,7 +347,7 @@ export class CustomComboBox<T> extends React.PureComponent<CustomComboBoxProps<T
   private handleValueChange = (value: T) => {
     this.dispatch({
       type: 'ValueChange',
-      value: value,
+      value,
       keepFocus: !this.isMobileLayout,
     });
   };

@@ -184,10 +184,10 @@ export class Select<TValue = {}, TItem = {}> extends React.Component<SelectProps
   };
 
   public static defaultProps = {
-    renderValue: renderValue,
-    renderItem: renderItem,
-    areValuesEqual: areValuesEqual,
-    filterItem: filterItem,
+    renderValue,
+    renderItem,
+    areValuesEqual,
+    filterItem,
     use: 'default',
   };
 
@@ -325,8 +325,8 @@ export class Select<TValue = {}, TItem = {}> extends React.Component<SelectProps
 
     const buttonParams: ButtonParams = {
       opened: this.state.opened,
-      label: label,
-      isPlaceholder: isPlaceholder,
+      label,
+      isPlaceholder,
       onClick: this.toggle,
       onKeyDown: this.handleKey,
     };
@@ -498,7 +498,7 @@ export class Select<TValue = {}, TItem = {}> extends React.Component<SelectProps
           const element = item();
 
           if (React.isValidElement(element)) {
-            return React.cloneElement(element, { key: i, isMobile: isMobile });
+            return React.cloneElement(element, { key: i, isMobile });
           }
 
           return null;
@@ -506,7 +506,7 @@ export class Select<TValue = {}, TItem = {}> extends React.Component<SelectProps
 
         if (React.isValidElement(item)) {
           if (isReactUINode('MenuItem', item)) {
-            return React.cloneElement(item, { key: i, isMobile: isMobile } as MenuItemProps);
+            return React.cloneElement(item, { key: i, isMobile } as MenuItemProps);
           }
           return React.cloneElement(item, { key: i });
         }
@@ -591,7 +591,7 @@ export class Select<TValue = {}, TItem = {}> extends React.Component<SelectProps
 
   private select(value: TValue) {
     this.focus();
-    this.setState({ opened: false, value: value });
+    this.setState({ opened: false, value });
 
     if (this.props.onValueChange && !this.getProps().areValuesEqual(this.getValue(), value)) {
       this.props.onValueChange(value);

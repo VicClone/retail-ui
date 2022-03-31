@@ -12,10 +12,10 @@ export class SelectionHelper {
   };
 
   public static backward = (start: number, end: number): Selection => {
-    return { start: start, end: end, direction: 'backward' };
+    return { start, end, direction: 'backward' };
   };
 
   public static forward = (start: number, end: number): Selection => {
-    return { start: start, end: end, direction: 'forward' };
+    return { start, end, direction: 'forward' };
   };
 }

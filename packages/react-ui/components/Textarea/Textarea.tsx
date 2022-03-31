@@ -184,7 +184,7 @@ export class Textarea extends React.Component<TextareaProps, TextareaState> {
   };
 
   public state = {
-    polyfillPlaceholder: polyfillPlaceholder,
+    polyfillPlaceholder,
     isCounterVisible: false,
   };
   private reflowCounter = () => {
@@ -491,7 +491,7 @@ export class Textarea extends React.Component<TextareaProps, TextareaState> {
       node: fakeNode,
       minRows: typeof rows === 'number' ? rows : parseInt(rows, 10),
       maxRows: typeof maxRows === 'number' ? maxRows : parseInt(maxRows, 10),
-      extraRow: extraRow,
+      extraRow,
     });
     node.style.height = height + 'px';
     node.style.overflowY = exceededMaxHeight ? 'scroll' : 'hidden';

@@ -346,7 +346,7 @@ export class Loader extends React.Component<LoaderProps, LoaderState> {
 
     this.setState({
       isStickySpinner: true,
-      spinnerStyle: spinnerStyle,
+      spinnerStyle,
     });
   };
 

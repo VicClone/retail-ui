@@ -392,7 +392,7 @@ export class Popup extends React.Component<PopupProps, PopupState> {
       <div className={styles.content(this.theme)} data-tid={'PopupContent'} ref={this.refForTransition}>
         <div
           className={styles.contentInner(this.theme)}
-          style={{ backgroundColor: backgroundColor, width: this.calculateWidth(width) }}
+          style={{ backgroundColor, width: this.calculateWidth(width) }}
           data-tid={'PopupContentInner'}
         >
           {children}

@@ -22,7 +22,7 @@ describe('<Input />', () => {
 
   it('calls onValueChange', () => {
     const onValueChange = jest.fn();
-    const wrapper = render({ value: '', onValueChange: onValueChange });
+    const wrapper = render({ value: '', onValueChange });
     wrapper.find('input').simulate('change', { target: { value: 'Hello' } });
     expect(onValueChange).toHaveBeenCalledTimes(1);
     const [value] = onValueChange.mock.calls[0];
@@ -31,13 +31,13 @@ describe('<Input />', () => {
 
   it('renders leftIcon', () => {
     const leftIcon = <i className="my-testy-icon" />;
-    const wrapper = render({ value: '', leftIcon: leftIcon });
+    const wrapper = render({ value: '', leftIcon });
     expect(wrapper.find('i.my-testy-icon')).toHaveLength(1);
   });
 
   it('renders rightIcon', () => {
     const rightIcon = <i className="my-testy-icon" />;
-    const wrapper = render({ value: '', rightIcon: rightIcon });
+    const wrapper = render({ value: '', rightIcon });
     expect(wrapper.find('i.my-testy-icon')).toHaveLength(1);
   });
 
@@ -132,7 +132,7 @@ describe('<Input />', () => {
 
   it('selectAllOnFocus prop works', () => {
     const value = 'Prop works';
-    const wrapper = render({ value: value, selectAllOnFocus: true });
+    const wrapper = render({ value, selectAllOnFocus: true });
 
     wrapper.find('input').simulate('focus');
 

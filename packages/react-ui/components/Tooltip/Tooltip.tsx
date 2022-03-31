@@ -388,7 +388,7 @@ export class Tooltip extends React.PureComponent<TooltipProps, TooltipState> {
           },
           popupProps: {
             opened: true,
-            useWrapper: useWrapper,
+            useWrapper,
           },
         };
 
@@ -396,7 +396,7 @@ export class Tooltip extends React.PureComponent<TooltipProps, TooltipState> {
         return {
           popupProps: {
             opened: false,
-            useWrapper: useWrapper,
+            useWrapper,
           },
         };
 
@@ -406,7 +406,7 @@ export class Tooltip extends React.PureComponent<TooltipProps, TooltipState> {
           popupProps: {
             onMouseEnter: this.handleMouseEnter,
             onMouseLeave: this.handleMouseLeave,
-            useWrapper: useWrapper,
+            useWrapper,
           },
         };
       case 'manual':
@@ -423,7 +423,7 @@ export class Tooltip extends React.PureComponent<TooltipProps, TooltipState> {
           },
           popupProps: {
             onClick: this.handleClick,
-            useWrapper: useWrapper,
+            useWrapper,
           },
         };
 
@@ -432,7 +432,7 @@ export class Tooltip extends React.PureComponent<TooltipProps, TooltipState> {
           popupProps: {
             onFocus: this.handleFocus,
             onBlur: this.handleBlur,
-            useWrapper: useWrapper,
+            useWrapper,
           },
         };
 
@@ -447,7 +447,7 @@ export class Tooltip extends React.PureComponent<TooltipProps, TooltipState> {
             onBlur: this.handleBlur,
             onMouseEnter: this.handleMouseEnter,
             onMouseLeave: this.handleMouseLeave,
-            useWrapper: useWrapper,
+            useWrapper,
           },
         };
 

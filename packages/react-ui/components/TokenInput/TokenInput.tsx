@@ -982,11 +982,11 @@ export class TokenInput<T = string> extends React.PureComponent<TokenInputProps<
     };
 
     return renderToken(item, {
-      isActive: isActive,
+      isActive,
       onClick: handleTokenClick,
       onDoubleClick: handleTokenDoubleClick,
       onRemove: handleIconClick,
-      disabled: disabled,
+      disabled,
     });
   };
 

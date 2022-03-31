@@ -26,6 +26,6 @@ export class SwitcherPlayground extends React.Component<
   }
 
   private handleValueChange = (value: string) => {
-    this.setState({ value: value, error: value === 'Error' });
+    this.setState({ value, error: value === 'Error' });
   };
 }

@@ -20,7 +20,7 @@ describe('Link', () => {
     it('does not call `onClick` when link clicked', () => {
       const onClick = jest.fn();
 
-      const wrapper = render({ onClick: onClick, disabled: true });
+      const wrapper = render({ onClick, disabled: true });
       wrapper.find('a').simulate('click');
 
       expect(onClick).toHaveBeenCalledTimes(0);
@@ -29,7 +29,7 @@ describe('Link', () => {
     it('does not call `onClick` when Enter pressed', () => {
       const onClick = jest.fn();
 
-      const wrapper = render({ onClick: onClick, disabled: true });
+      const wrapper = render({ onClick, disabled: true });
       wrapper.find('a').simulate('focus').simulate('keydown', { key: 'Enter' });
 
       expect(onClick).toHaveBeenCalledTimes(0);
@@ -53,7 +53,7 @@ describe('Link', () => {
       it.each([['https://example.com:8080/home'], ['http://example.com'], ['//example.com/'], ['HTTP://EXAMPLE.COM']])(
         '%s',
         (href) => {
-          const wrapper = render({ href: href });
+          const wrapper = render({ href });
 
           expect(wrapper.find('a').prop('rel')).toBe('noopener noreferrer');
         },
@@ -71,7 +71,7 @@ describe('Link', () => {
         ['page.html'],
         ['#anchor'],
       ])('%s', (href) => {
-        const wrapper = render({ href: href });
+        const wrapper = render({ href });
 
         expect(wrapper.find('a').prop('rel')).toBe('noopener');
       });

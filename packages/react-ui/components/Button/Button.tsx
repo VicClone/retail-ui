@@ -277,13 +277,13 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         ...corners,
       },
       disabled: disabled || loading,
-      onClick: onClick,
+      onClick,
       onFocus: this.handleFocus,
       onBlur: this.handleBlur,
-      onKeyDown: onKeyDown,
-      onMouseEnter: onMouseEnter,
-      onMouseLeave: onMouseLeave,
-      onMouseOver: onMouseOver,
+      onKeyDown,
+      onMouseEnter,
+      onMouseLeave,
+      onMouseOver,
       tabIndex: disableFocus ? -1 : 0,
       title: this.props.title,
     };
@@ -296,7 +296,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         [this.getSizeWrapClassName()]: true,
       }),
       style: {
-        width: width,
+        width,
       },
     };
 

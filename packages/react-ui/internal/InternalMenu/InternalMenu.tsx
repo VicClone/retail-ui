@@ -152,7 +152,7 @@ export class InternalMenu extends React.PureComponent<MenuProps, MenuState> {
               }
 
               return React.cloneElement<MenuItemProps, MenuItem>(modifiedChild, {
-                ref: ref,
+                ref,
                 state: highlight ? 'hover' : modifiedChild.props.state,
                 onClick: this.select.bind(this, index, false),
                 onMouseEnter: (event) => {

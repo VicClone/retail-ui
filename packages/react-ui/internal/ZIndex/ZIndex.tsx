@@ -86,7 +86,7 @@ export class ZIndex extends React.Component<ZIndexProps> {
             wrapperStyle.zIndex = newZIndex;
 
             zIndexContexValue = coverChildren
-              ? { parentLayerZIndex: parentLayerZIndex, maxZIndex: newZIndex }
+              ? { parentLayerZIndex, maxZIndex: newZIndex }
               : { parentLayerZIndex: newZIndex, maxZIndex: Number.isFinite(maxZIndex) ? newZIndex : Infinity };
 
             if (createStackingContext) {

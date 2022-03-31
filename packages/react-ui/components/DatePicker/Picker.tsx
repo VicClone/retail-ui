@@ -49,7 +49,7 @@ export class Picker extends React.Component<Props, State> {
     const today = getTodayCalendarDate();
     this.state = {
       date: this.getInitialDate(today),
-      today: today,
+      today,
     };
   }
 

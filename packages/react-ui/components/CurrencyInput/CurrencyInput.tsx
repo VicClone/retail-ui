@@ -413,7 +413,7 @@ export class CurrencyInput extends React.PureComponent<CurrencyInputProps, Curre
 
     this.setState({
       focused: true,
-      selection: selection,
+      selection,
     });
 
     if (this.props.onFocus) {

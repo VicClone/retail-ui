@@ -219,7 +219,7 @@ export class ComboBoxView<T> extends React.Component<ComboBoxViewProps<T>, Combo
       onValueChange: this.props.onInputValueChange,
       value: this.props.textValue,
       placeholder: this.props.placeholder,
-      rightIcon: rightIcon,
+      rightIcon,
     };
 
     return (

@@ -77,11 +77,11 @@ describe('Toast', () => {
     const handler = jest.fn();
     (wrapper.instance() as Toast).push('message', {
       label: 'action',
-      handler: handler,
+      handler,
     });
 
     const toast = (wrapper.instance() as Toast)._toast;
 
-    expect(toast!.props.action).toEqual({ label: 'action', handler: handler });
+    expect(toast!.props.action).toEqual({ label: 'action', handler });
   });
 });

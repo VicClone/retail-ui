@@ -113,7 +113,7 @@ export class Autocomplete extends React.Component<AutocompleteProps, Autocomplet
   };
 
   public static defaultProps = {
-    renderItem: renderItem,
+    renderItem,
     size: 'small',
     disablePortal: false,
     hasShadow: true,
@@ -438,7 +438,7 @@ export class Autocomplete extends React.Component<AutocompleteProps, Autocomplet
     promise.then((items) => {
       if (this.opened && expectingId === this.requestId) {
         this.setState({
-          items: items,
+          items,
           selected: -1,
         });
       }

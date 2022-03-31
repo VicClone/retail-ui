@@ -73,7 +73,7 @@ if (IS_PROXY_SUPPORTED) {
             const componentNode = variableNode[componentName];
             if (!componentNode[elementName]) {
               componentNode[elementName] = {
-                dependencies: dependencies,
+                dependencies,
                 variables: [variableName],
               };
             } else if (!componentNode[elementName].variables.includes(variableName)) {

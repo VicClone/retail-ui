@@ -184,7 +184,7 @@ export class InputLikeText extends React.Component<InputLikeTextProps, InputLike
       <span
         {...rest}
         className={className}
-        style={{ width: width, textAlign: align }}
+        style={{ width, textAlign: align }}
         tabIndex={disabled ? undefined : 0}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}

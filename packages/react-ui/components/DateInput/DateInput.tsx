@@ -334,7 +334,7 @@ export class DateInput extends React.Component<DateInputProps, DateInputState> {
   };
 
   private selectDateComponent = (selected: InternalDateComponentType | null): void => {
-    this.setState({ selected: selected, inputMode: false });
+    this.setState({ selected, inputMode: false });
   };
 
   private updateValue = (state: Partial<DateInputState> = {}): void => {
@@ -421,7 +421,7 @@ export class DateInput extends React.Component<DateInputProps, DateInputState> {
   private shiftSelection = (step: number): void => {
     const selected = this.iDateMediator.getShiftedType(this.state.selected, step);
     if (selected !== this.state.selected) {
-      this.setState({ selected: selected, inputMode: false });
+      this.setState({ selected, inputMode: false });
     }
   };
 

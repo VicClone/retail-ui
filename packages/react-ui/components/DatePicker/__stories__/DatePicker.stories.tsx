@@ -68,7 +68,7 @@ class DatePickerWithError extends React.Component<any, any> {
       const error =
         !!currentValue && !DatePicker.validate(currentValue, { minDate: '08.15.2003', maxDate: '10.21.2006' });
       return {
-        error: error,
+        error,
         tooltip: error,
       };
     });

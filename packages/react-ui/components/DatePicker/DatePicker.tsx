@@ -355,14 +355,14 @@ export class DatePicker extends React.PureComponent<DatePickerProps<DatePickerVa
   };
 
   private handleSelect = ({ date, month, year }: CalendarDateShape) => {
-    const value = InternalDateTransformer.dateToInternalString({ date: date, month: month + 1, year: year });
+    const value = InternalDateTransformer.dateToInternalString({ date, month: month + 1, year });
     if (this.props.onValueChange) {
       this.props.onValueChange(value);
     }
   };
 
   private isHoliday = ({ date, month, year, isWeekend }: CalendarDateShape & { isWeekend: boolean }) => {
-    const dateString = InternalDateTransformer.dateToInternalString({ date: date, month: month + 1, year: year });
+    const dateString = InternalDateTransformer.dateToInternalString({ date, month: month + 1, year });
     return this.props.isHoliday(dateString, isWeekend);
   };
 }

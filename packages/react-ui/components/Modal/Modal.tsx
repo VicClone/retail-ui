@@ -160,7 +160,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     const { hasHeader, hasFooter, hasPanel } = this.state;
 
     const modalContextProps: ModalContextProps = {
-      hasHeader: hasHeader,
+      hasHeader,
       horizontalScroll: this.state.horizontalScroll,
       setHasHeader: this.setHasHeader,
       setHasFooter: this.setHasFooter,

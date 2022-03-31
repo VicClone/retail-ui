@@ -212,7 +212,7 @@ export class PopupMenu extends React.Component<PopupMenuProps, PopupMenuState> {
     this.setState(
       {
         menuVisible: true,
-        firstItemShouldBeSelected: firstItemShouldBeSelected,
+        firstItemShouldBeSelected,
       },
       () => {
         this.handleChangeMenuVisible(false);

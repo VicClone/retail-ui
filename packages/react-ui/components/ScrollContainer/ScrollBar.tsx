@@ -112,7 +112,7 @@ export class ScrollBar extends React.Component<ScrollBarProps, ScrollBarState> {
         active: scrollActive,
         size: scrollSize,
         pos: scrollPos,
-        scrollState: scrollState,
+        scrollState,
       });
     }
   };

@@ -548,7 +548,7 @@ export const WithMenuAlignAndVariousWidth: Story = () => {
 WithMenuAlignAndVariousWidth.parameters = {
   creevey: {
     tests: {
-      async ['open']() {
+      async 'open'() {
         const root = await this.browser.findElement({ css: '#test-element' });
         await this.expect(await root.takeScreenshot()).to.matchImage();
       },

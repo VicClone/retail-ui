@@ -91,7 +91,7 @@ export class Toast extends React.Component<ToastProps, ToastState> {
 
     safelyCall(this.props.onPush, notification, action);
 
-    this.setState(({ id }) => ({ notification: notification, action: action, id: id + 1 }), this._setTimer);
+    this.setState(({ id }) => ({ notification, action, id: id + 1 }), this._setTimer);
   }
 
   /**
@@ -114,7 +114,7 @@ export class Toast extends React.Component<ToastProps, ToastState> {
       onMouseLeave: this._setTimer,
       onClose: this.close,
       children: notification,
-      action: action,
+      action,
     };
 
     return (

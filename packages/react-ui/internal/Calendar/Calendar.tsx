@@ -79,7 +79,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     this.state = {
       scrollPosition: 0,
       months: CalendarUtils.getMonths(initialMonth, initialYear),
-      today: today,
+      today,
       scrollDirection: 1,
       scrollTarget: 0,
       touchStart: 0,

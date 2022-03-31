@@ -792,7 +792,7 @@ class TestComboBox extends React.Component<TestComboboxProps<ValueType>, ComboBo
   private updateState = (newState: Partial<ComboBoxState>) => this.setState((state) => ({ ...state, ...newState }));
 
   private handleChange = (value: ValueType) => {
-    this.setState({ value: value, error: false });
+    this.setState({ value, error: false });
   };
 }
 
@@ -873,12 +873,12 @@ class ComplexCombobox extends React.Component<Omit<ComboBoxProps<any>, 'getItems
     return getCities(query)
       .then(({ foundItems, totalCount }: { foundItems: Array<{ Id: number; City: string }>; totalCount: number }) => ({
         foundItems: foundItems.map(this.mapCity),
-        totalCount: totalCount,
+        totalCount,
       }))
       .then(({ foundItems, totalCount }: { foundItems: any[]; totalCount: number }) => ({
         popularItems: query.length === 0 ? this.popularItems : [],
         itemsToShow: foundItems,
-        totalCount: totalCount,
+        totalCount,
       }))
       .then(({ popularItems, itemsToShow, totalCount }: { popularItems: any; itemsToShow: any; totalCount: number }) =>
         [].concat(
@@ -1072,7 +1072,7 @@ class ComboBoxWithExternalValue extends React.Component {
       ].filter((x) => x.label.toLowerCase().includes(q.toLowerCase()) || x.value === q),
     );
 
-  private onChange = (value: { value: string; label: string }) => this.setState({ value: value, warning: false });
+  private onChange = (value: { value: string; label: string }) => this.setState({ value, warning: false });
 
   private onUnexpectedInput = (query: string) => {
     this.setState({

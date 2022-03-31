@@ -99,7 +99,7 @@ export class Tabs<T extends string = string> extends React.Component<TabsProps<T
               <div className={cx(styles.root(this.theme), vertical && styles.vertical())} style={{ width }}>
                 <TabsContext.Provider
                   value={{
-                    vertical: vertical,
+                    vertical,
                     activeTab: value,
                     getTab: this.getTab,
                     addTab: this.addTab,

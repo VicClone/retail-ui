@@ -483,7 +483,7 @@ export class DateSelect extends React.PureComponent<DateSelectProps, DateSelectS
     const topCapped = calculatedPos <= minPos;
     const botCapped = calculatedPos >= maxPos;
 
-    this.setState({ pos: calculatedPos, top: top, height: height, topCapped: topCapped, botCapped: botCapped });
+    this.setState({ pos: calculatedPos, top, height, topCapped, botCapped });
   }
 
   private getMinPos() {

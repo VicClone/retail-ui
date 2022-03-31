@@ -68,7 +68,7 @@ describe('<RadioGroup />', () => {
 
   it('disables all radios on disabled prop', () => {
     const items = ['one', 'two', 'three'];
-    const wrapper = render({ items: items, disabled: true });
+    const wrapper = render({ items, disabled: true });
     const radios = wrapper.find(Radio);
     radios.forEach((x) => {
       expect(x.find('input').prop('disabled')).toBeTruthy();
@@ -77,7 +77,7 @@ describe('<RadioGroup />', () => {
 
   it('passes given name to all radios on name prop', () => {
     const items = ['one', 'two', 'three'];
-    const wrapper = render({ items: items, name: 'SupaGroup' });
+    const wrapper = render({ items, name: 'SupaGroup' });
     const radios = wrapper.find(Radio);
     radios.forEach((x) => {
       expect(x.find('input').prop('name')).toBe('SupaGroup');
@@ -86,7 +86,7 @@ describe('<RadioGroup />', () => {
 
   it('activates radio with defaultValue', () => {
     const items = ['one', 'two', 'three'];
-    const wrapper = render({ items: items, defaultValue: 'two' });
+    const wrapper = render({ items, defaultValue: 'two' });
     const radios = wrapper.find(Radio);
     expect(radios.at(1).find('input').prop('checked')).toBeTruthy();
   });
@@ -145,7 +145,7 @@ describe('<RadioGroup />', () => {
         <Radio value="three">Hello</Radio>
       </div>
     );
-    const wrapper = render({ children: children, disabled: true });
+    const wrapper = render({ children, disabled: true });
     const radios = wrapper.find(Radio);
     radios.forEach((x) => {
       expect(x.find('input').prop('disabled')).toBeTruthy();
@@ -160,7 +160,7 @@ describe('<RadioGroup />', () => {
         <Radio value="three">Hello</Radio>
       </div>
     );
-    const wrapper = render({ children: children, name: 'SupaGroup' });
+    const wrapper = render({ children, name: 'SupaGroup' });
     const radios = wrapper.find(Radio);
     radios.forEach((x) => {
       expect(x.find('input').prop('name')).toBe('SupaGroup');
@@ -175,7 +175,7 @@ describe('<RadioGroup />', () => {
         <Radio value="three">Hello</Radio>
       </div>
     );
-    const wrapper = render({ children: children, defaultValue: 'two' });
+    const wrapper = render({ children, defaultValue: 'two' });
     const radios = wrapper.find(Radio);
     expect(radios.at(1).find('input').prop('checked')).toBeTruthy();
   });
@@ -188,7 +188,7 @@ describe('<RadioGroup />', () => {
         <Radio value="three">Hello</Radio>
       </div>
     );
-    const wrapper = render({ children: children, defaultValue: 'two' });
+    const wrapper = render({ children, defaultValue: 'two' });
     const instance = wrapper.instance();
     expect(instance.focus).toBeInstanceOf(Function);
   });
@@ -201,7 +201,7 @@ describe('<RadioGroup />', () => {
         <Radio value="three">Hello</Radio>
       </div>
     );
-    const wrapper = render({ children: children, defaultValue: 'two' });
+    const wrapper = render({ children, defaultValue: 'two' });
     const instance = wrapper.instance();
     instance.focus();
   });

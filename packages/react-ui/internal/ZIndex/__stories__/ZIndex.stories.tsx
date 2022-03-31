@@ -192,7 +192,7 @@ class ZSample extends React.Component<ZSampleProps, ZSampleState> {
   }
 
   public renderBlock(content: React.ReactNode, width: number, height?: number) {
-    return <Center style={{ width: width, height: height || width }}>{content}</Center>;
+    return <Center style={{ width, height: height || width }}>{content}</Center>;
   }
 }
 
@@ -225,11 +225,11 @@ class Demo extends React.Component<{}> {
         style={{
           height: '100px',
           width: '100px',
-          background: background,
+          background,
           position: 'absolute',
-          zIndex: zIndex,
-          left: left,
-          top: top,
+          zIndex,
+          left,
+          top,
         }}
       />
     );

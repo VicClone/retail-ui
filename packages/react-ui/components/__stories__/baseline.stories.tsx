@@ -152,7 +152,7 @@ const BaselineFont: React.FC<{
   return (
     <div
       style={{
-        fontFamily: fontFamily,
+        fontFamily,
         height: '50px',
         margin: '20px',
         backgroundImage: bg,

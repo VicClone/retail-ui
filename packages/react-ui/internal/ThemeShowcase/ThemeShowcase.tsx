@@ -375,7 +375,7 @@ const VariableValue = (props: { value: string }) => {
 
   return (
     <span className={cx({ [styles.undefined()]: !value })}>
-      {hasExample && <span className={styles.colorExample()} style={{ background: value, borderColor: borderColor }} />}
+      {hasExample && <span className={styles.colorExample()} style={{ background: value, borderColor }} />}
       {value || 'undefined'}
     </span>
   );
